@@ -16,7 +16,6 @@ public class Prg03gustavosouzasales {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // o código aqui em baixo.
         
         // Pede pro Java rodar esse código na thread que cuida da parte gráfica
         java.awt.EventQueue.invokeLater(new Runnable()
