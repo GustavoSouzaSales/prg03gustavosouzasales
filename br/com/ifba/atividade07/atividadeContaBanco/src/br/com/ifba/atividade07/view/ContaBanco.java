@@ -17,6 +17,8 @@ public class ContaBanco {
         System.out.println("Status: " + this.getStatus());
     }
     public void abrirConta(String t){
+        
+        // Verifica se a conta é "CC" ou "CP". 
         this.setTipo(t);
         this.setStatus(true);
         if (t == "CC") {
@@ -27,6 +29,8 @@ public class ContaBanco {
         System.out.println("Conta aberta com sucesso!");
     }
     public void fecharConta(){
+        
+        // Verifica se tem dinheiro ou débito na conta pra fechar.
         if (this.getSaldo() > 0){
             System.out.println("Conta não pode ser fechada, pois ainda tem dinheiro.");
         } else if (this.getSaldo() < 0){
@@ -37,6 +41,8 @@ public class ContaBanco {
         }
     }
     public void depositar(float v){
+        
+        // Verifica se a conta está aberta ou fechada para realizar o depósito.
         if(this.getStatus()){
             this.setSaldo(this.getSaldo() + v);
             System.out.println("Depósito realizado na conta de" + this.getDono());
@@ -45,6 +51,8 @@ public class ContaBanco {
         }
     }
     public void sacar(float v){
+        
+        // Verifica se tem saldo e se a conta tá aberta ou fechada para realizar o saque.
         if(this.getStatus()){
             if (this.getSaldo() >= v){
                 this.setSaldo(this.getSaldo() - v);
@@ -57,6 +65,8 @@ public class ContaBanco {
         }
     }
     public void pagarMensal(){
+        
+        // Verifica o tipo da conta de tal pessoa, pois varia o "v".
         int v = 0;
         if (this.getTipo() == "CC") {
             v = 12;
